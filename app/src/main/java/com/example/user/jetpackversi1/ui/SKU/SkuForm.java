@@ -17,6 +17,7 @@ import com.example.user.jetpackversi1.R;
 import com.example.user.jetpackversi1.dao.AppDatabase;
 import com.example.user.jetpackversi1.dao.Datasku;
 
+import com.example.user.jetpackversi1.dao.bindingAdapterclass;
 import com.example.user.jetpackversi1.dao.userdata;
 import com.example.user.jetpackversi1.databinding.SkuDataBinding;
 import com.example.user.jetpackversi1.ui.Login.Login;
@@ -39,7 +40,7 @@ public class SkuForm extends AppCompatActivity implements SkuContract {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ((App) getApplication()).getNetComponent().inject(this);
-
+        //new bindingAdapterclass(appDatabase);
         skuAdapter= new SKUAdapter(this,appDatabase);
         skuDataBinding = DataBindingUtil.setContentView(this, R.layout.activity_sku_form);
         skuDataBinding.setViewModel(ViewModelProviders.of(this,new SkuViewModelFactory(this,this,appDatabase)).get(SkuViewModel.class));

@@ -5,6 +5,7 @@
             name="viewModel"
             type="com.example.user.jetpackversi1.dao.Datasku" />
         <variable name="eventListener" type="com.example.user.jetpackversi1.ui.SKU.handler"/>
+
     </data>
 <RelativeLayout
 
@@ -33,7 +34,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="0.7"
-                app:skuSid="@{viewModel.skuSid}"
+                android:text="@{viewModel.skuSid}"
                 android:textColor="@android:color/background_dark" />
 
             <ImageView

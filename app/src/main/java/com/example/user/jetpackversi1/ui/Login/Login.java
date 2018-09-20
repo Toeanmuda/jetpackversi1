@@ -17,6 +17,7 @@ import com.example.user.jetpackversi1.dao.AppDatabase;
 import com.example.user.jetpackversi1.dao.Datasku;
 
 import com.example.user.jetpackversi1.dao.Sku;
+import com.example.user.jetpackversi1.dao.bindingAdapterclass;
 import com.example.user.jetpackversi1.dao.userdata;
 import com.example.user.jetpackversi1.databinding.LoginDataBinding;
 
@@ -327,6 +328,7 @@ String sku="[{\n" +
         "\t\t\t}]";
 
         try {
+
             List<Datasku> dataa= new ArrayList<>();
             JSONArray jsonArray = new JSONArray(AB);
 

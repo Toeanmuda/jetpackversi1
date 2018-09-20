@@ -11,14 +11,6 @@ public class Sku {
     @ColumnInfo(name = "created_at")
     public String createdAt;
 
-    public String getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
-    }
-
     @NonNull
     public String getSkuSid() {
         return skuSid;
@@ -59,6 +51,9 @@ public class Sku {
     public String skuName;
     public String skuGroup;
     public String skuType;
+
+    @ColumnInfo(name = "updated_at")
+    public String updatedAt;
 }
 
 

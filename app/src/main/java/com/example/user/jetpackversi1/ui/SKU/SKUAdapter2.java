@@ -150,6 +150,11 @@ if (item.checked==null) {item.checked=false;}
         }
 
         public void bind(@NonNull Datasku user) {
+            //Log.d("tag",user.skuSid);
+            if(appDatabase.skuDao().getSkuName(user.skuSid)!=null){
+                user.skuSid = appDatabase.skuDao().getSkuName(user.skuSid);
+            }
+
             mBinding.setViewModel(user);
             //mBinding.textView.setText(user.getUserName());
             mBinding.executePendingBindings();

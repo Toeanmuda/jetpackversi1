@@ -36,12 +36,7 @@ public class Datasku {
     @Nullable
     public Boolean checked;
 
-
-
-/*
-    public Datasku() {
-
-    }
+    /*
     public Datasku(@NonNull String trcSid, int trcType, int coType, String ptSid, String skuSid, String skuUnit, int pckg, int trcQty, int trcAccept, Boolean isSync, String postDate) {
         this.trcSid = trcSid;
         this.trcType = trcType;
@@ -88,21 +83,6 @@ public class Datasku {
 
     public void setPtSid(String ptSid) {
         this.ptSid = ptSid;
-    }
-
-
-    @BindingAdapter(value = {"skuSid"})
-    public static void skuSid(TextView textView, String skuSid) {
-        if(skuSid.equals("00000000-0000-0000-0000-000000000000")){
-            textView.setText("MB 102");
-        }
-        else if(skuSid.equals("00000000-0000-0000-0000-000000000001")){
-            textView.setText("MB 202");
-        }
-
-        else if(skuSid.equals("00000000-0000-0000-0000-000000000002")){
-            textView.setText("MB 302");
-        }
     }
 
     public String getSkuSid() {

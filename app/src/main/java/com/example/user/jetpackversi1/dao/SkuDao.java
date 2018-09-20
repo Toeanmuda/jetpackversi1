@@ -14,7 +14,6 @@ public interface SkuDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertMultipleMovies(List<Sku> skus);
 
-    @Query("SELECT skuName FROM sku_table where skuSid=:skuSid")
-    Sku getSkuName(String skuSid);
-
+    @Query("SELECT skuName FROM sku_table WHERE skuSid=:skuSid")
+    String getSkuName(String skuSid);
 }
