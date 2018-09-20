@@ -25,9 +25,10 @@ import android.content.Context;
  * Created by amitshekhar on 07/07/17.
  */
 
-@Database(entities = {userdata.class,Datasku.class}, version = 2)
+@Database(entities = {userdata.class,Datasku.class,Sku.class}, version = 2)
 public abstract class AppDatabase extends RoomDatabase {
     public abstract UserDao userDao();
     public abstract DataskuDao dataskuDao();
+    public abstract SkuDao skuDao();
 
 }

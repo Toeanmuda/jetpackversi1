@@ -15,6 +15,8 @@ import com.example.user.jetpackversi1.R;
 import com.example.user.jetpackversi1.dao.AppDatabase;
 
 import com.example.user.jetpackversi1.dao.Datasku;
+
+import com.example.user.jetpackversi1.dao.Sku;
 import com.example.user.jetpackversi1.dao.userdata;
 import com.example.user.jetpackversi1.databinding.LoginDataBinding;
 
@@ -297,12 +299,50 @@ String AB="[\n" +
         "  }\n" +
         "]";
 
+String sku="[{\n" +
+        "\t\t\t\t\"skuSid\": \"00000000-0000-0000-0000-000000000000\",\n" +
+        "\t\t\t\t\"skuName\": \"MB 102\",\n" +
+        "\t\t\t\t\"skuGroup\": \"MB 102\",\n" +
+        "\t\t\t\t\"skuType\": \"MB 102\"\n" +
+        "\t\t\t}, {\n" +
+        "\t\t\t\t\"skuSid\": \"00000000-0000-0000-0000-000000000001\",\n" +
+        "\t\t\t\t\"skuName\": \"MB 202\",\n" +
+        "\t\t\t\t\"skuGroup\": \"MB 202\",\n" +
+        "\t\t\t\t\"skuType\": \"MB 202\"\n" +
+        "\t\t\t}, {\n" +
+        "\t\t\t\t\"skuSid\": \"00000000-0000-0000-0000-000000000002\",\n" +
+        "\t\t\t\t\"skuName\": \"MB 302\",\n" +
+        "\t\t\t\t\"skuGroup\": \"MB 302\",\n" +
+        "\t\t\t\t\"skuType\": \"MB 302\"\n" +
+        "\t\t\t}, {\n" +
+        "\t\t\t\t\"skuSid\": \"00000000-0000-0000-0000-000000000003\",\n" +
+        "\t\t\t\t\"skuName\": \"MB 402\",\n" +
+        "\t\t\t\t\"skuGroup\": \"MB 402\",\n" +
+        "\t\t\t\t\"skuType\": \"MB 402\"\n" +
+        "\t\t\t}, {\n" +
+        "\t\t\t\t\"skuSid\": \"00000000-0000-0000-0000-000000000004\",\n" +
+        "\t\t\t\t\"skuName\": \"MB 502\",\n" +
+        "\t\t\t\t\"skuGroup\": \"MB 502\",\n" +
+        "\t\t\t\t\"skuType\": \"MB 502\"\n" +
+        "\t\t\t}]";
 
         try {
-
-
             List<Datasku> dataa= new ArrayList<>();
             JSONArray jsonArray = new JSONArray(AB);
+
+            List<Sku> datasku= new ArrayList<>();
+            JSONArray jsonArraysku = new JSONArray(sku);
+
+            for (int i = 0; i < jsonArraysku.length(); i++) {
+                Gson gson = new Gson();
+                Type listType = new TypeToken<List<Sku>>(){}.getType();
+                List<Sku> posts = gson.fromJson(sku,listType);
+                Log.d("datanya", posts.get(i).toString());
+                datasku.add(posts.get(i));
+            }
+            appDatabase.skuDao().insertMultipleMovies(datasku);
+
+
             for (int i = 0; i < jsonArray.length(); i++) {
                // JSONObject data=jsonArray.getJSONObject(i);
               //  dataa.add(data[i]);
@@ -325,13 +365,13 @@ String AB="[\n" +
 
             }
             appDatabase.dataskuDao().insertMultipleMovies(dataa);
-
             startActivity(new Intent(this, SkuForm.class));
-
 
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
+
 
 
 

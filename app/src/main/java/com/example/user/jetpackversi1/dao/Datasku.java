@@ -91,7 +91,7 @@ public class Datasku {
     }
 
 
-    @BindingAdapter(value = {""})
+    @BindingAdapter(value = {"skuSid"})
     public static void skuSid(TextView textView, String skuSid) {
         if(skuSid.equals("00000000-0000-0000-0000-000000000000")){
             textView.setText("MB 102");

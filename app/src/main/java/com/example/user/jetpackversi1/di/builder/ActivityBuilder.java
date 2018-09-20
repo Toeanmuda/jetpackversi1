@@ -14,9 +14,9 @@ public abstract class ActivityBuilder {
   @ContributesAndroidInjector(modules={Login.class})
   abstract Login bindLoginActivity();
 
-  @ContributesAndroidInjector(modules = {})
+  @ContributesAndroidInjector(modules = {MainActivity.class})
   abstract MainActivity bindMainActivity();
 
-  @ContributesAndroidInjector(modules = {})
+  @ContributesAndroidInjector(modules = {SkuForm.class})
   abstract SkuForm bindSkuForm();
 }
